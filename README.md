@@ -11,7 +11,7 @@ in real time.
 
 ## Live Simulator
 
-- Try it now: [sloscope.xyz](https://sloscope.xyz)
+- Try it now: [sloscope.eu](https://sloscope.eu)
 
 Main simulation view with simulation controls, metric cards, and latency distribution editor.
 ![Simulation dashboard](docs/screenshots/screenshot-1.png)
@@ -71,7 +71,8 @@ This repo includes a GitHub Actions workflow at `.github/workflows/deploy-pages.
 6. Open the published URL shown in the workflow run or Pages settings.
 
 Notes:
-- This repo builds with `VITE_BASE_PATH=/` in GitHub Actions to support custom-domain hosting (for example `https://sloscope.xyz`).
+- This repo builds with `VITE_BASE_PATH=/` in GitHub Actions to support custom-domain hosting (https://sloscope.eu).
+- The active custom domain is configured in GitHub `Settings -> Pages`. With the custom Actions workflow, GitHub ignores `public/CNAME` for domain configuration; keep that file aligned with the Pages setting.
 
 ## Metric Semantics
 
