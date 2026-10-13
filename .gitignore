@@ -15,3 +15,5 @@ playwright.config.d.ts
 *.tfplan
 crash.log
 infra/dns/*.auto.tfvars
+infra/github/*.auto.tfvars
+infra/github/terraform.tfvars

@@ -80,6 +80,12 @@ Terraform configuration for `sloscope.eu` lives in [infra/dns](infra/dns/README.
 The separate **Terraform DNS** workflow validates pull requests and supports
 manual plan/apply runs after the state backend and credentials are configured.
 
+## GitHub Infrastructure
+
+The independent [GitHub bootstrap](infra/github/README.md) configuration can adopt
+the current repository settings or prepare a new GitHub repository before code
+is pushed. Its initial runs are local, with externally supplied GitHub credentials.
+
 ## Metric Semantics
 
 SLI:
