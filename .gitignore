@@ -9,3 +9,9 @@ vite.config.js
 vite.config.d.ts
 playwright.config.js
 playwright.config.d.ts
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+infra/dns/*.auto.tfvars

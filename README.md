@@ -74,6 +74,12 @@ Notes:
 - This repo builds with `VITE_BASE_PATH=/` in GitHub Actions to support custom-domain hosting (https://sloscope.eu).
 - The active custom domain is configured in GitHub `Settings -> Pages`. With the custom Actions workflow, GitHub ignores `public/CNAME` for domain configuration; keep that file aligned with the Pages setting.
 
+## DNS Infrastructure
+
+Terraform configuration for `sloscope.eu` lives in [infra/dns](infra/dns/README.md).
+The separate **Terraform DNS** workflow validates pull requests and supports
+manual plan/apply runs after the state backend and credentials are configured.
+
 ## Metric Semantics
 
 SLI:
