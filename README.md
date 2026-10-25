@@ -11,7 +11,7 @@ in real time.
 
 ## Live Simulator
 
-- Try it now: [sloscope.eu](https://sloscope.eu)
+- Try it now: [sloscope.ivanwolkow.eu](https://sloscope.ivanwolkow.eu)
 
 Main simulation view with simulation controls, metric cards, and latency distribution editor.
 ![Simulation dashboard](docs/screenshots/screenshot-1.png)
@@ -71,20 +71,17 @@ This repo includes a GitHub Actions workflow at `.github/workflows/deploy-pages.
 6. Open the published URL shown in the workflow run or Pages settings.
 
 Notes:
-- This repo builds with `VITE_BASE_PATH=/` in GitHub Actions to support custom-domain hosting (https://sloscope.eu).
+- This repo builds with `VITE_BASE_PATH=/` in GitHub Actions to support custom-domain hosting (https://sloscope.ivanwolkow.eu).
 - The active custom domain is configured in GitHub `Settings -> Pages`. With the custom Actions workflow, GitHub ignores `public/CNAME` for domain configuration; keep that file aligned with the Pages setting.
 
 ## DNS Infrastructure
 
-Terraform configuration for `sloscope.eu` lives in [infra/dns](infra/dns/README.md).
-The separate **Terraform DNS** workflow validates pull requests and supports
-manual plan/apply runs after the state backend and credentials are configured.
-
-## GitHub Infrastructure
-
-The independent [GitHub bootstrap](infra/github/README.md) configuration can adopt
-the current repository settings or prepare a new GitHub repository before code
-is pushed. Its initial runs are local, with externally supplied GitHub credentials.
+Infrastructure is owned by [personal-infra](https://github.com/ivanwolkow/personal-infra).
+Its `infra/dns` root manages `sloscope.ivanwolkow.eu`, `infra/sloscope-github`
+configures GitHub Pages, and `infra/sloscope-dns` plus the shared Caddy gateway
+redirect `sloscope.eu` and `www.sloscope.eu` to the new address. Follow that
+repository's `infra/sloscope-dns/README.md` for state handover and cutover order.
+The app's Actions workflow continues to build and deploy to GitHub Pages.
 
 ## Metric Semantics
 
